@@ -8,10 +8,10 @@
 \f0\fs24 \cf0 [build]\
   base = "mentoruuniversitypaymentplan"\
   publish = "mentoruuniversitypaymentplan"\
-  functions = "mentoruuniversitypaymentplan/payment-page/netlify-functions\'94\
-  command = "npm run build" \
+  functions = "mentoruuniversitypaymentplan/payment-page/netlify-functions"\
 \
-[context.production.environment]\
-  STRIPE_PUBLIC_KEY = "pk_live_51P6zKtJxeHdRKz4MDhb9kFoIOG6WDfcLl34bioOKlta4geLCMFRAe42GGrA3W501CbNr8sBsvP0mhStQrJo7qLhs00nnsPL3Jj"\
-  STRIPE_SECRET_KEY = "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"\
+[build.environment]\
+  STRIPE_PUBLIC_KEY = "$\{STRIPE_PUBLIC_KEY\}"\
+  STRIPE_SECRET_KEY = "$\{STRIPE_SECRET_KEY\}"\
+  WEBHOOK_SECRET = "$\{WEBHOOK_SECRET\}"\
 }
