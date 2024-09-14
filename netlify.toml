@@ -1,9 +1,9 @@
 [build]
-base = "mentoruuniversitypaymentplan"
-publish = "mentoruuniversitypaymentplan/"
-functions = "mentoruuniversitypaymentplan/payment-page/netlify-functions/"
+  base = "/"
+  publish = "mentoruuniversitypaymentplan"
+  functions = "mentoruuniversitypaymentplan/payment-page/netlify-functions"
+  command = "npm run build" # Replace with your actual build command if different
 
 [build.environment]
-STRIPE_PUBLIC_KEY = "${STRIPE_PUBLIC_KEY}"
-STRIPE_SECRET_KEY = "${STRIPE_SECRET_KEY}"
-
+  STRIPE_PUBLIC_KEY = "${STRIPE_PUBLIC_KEY}"
+  STRIPE_SECRET_KEY = "${STRIPE_SECRET_KEY}"
