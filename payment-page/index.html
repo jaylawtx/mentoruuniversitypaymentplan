@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor U! Payment Plan</title>
+</head>
+<body>
+    <h1>Mentor U! University Membership Payment Plan</h1>
+    <form id="paymentPlanForm">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="deposit">Select your deposit amount:</label>
+        <select id="deposit" name="deposit">
+            <option value="200">Deposit: $200</option>
+            <option value="350">Deposit: $350</option>
+            <option value="500">Deposit: $500</option>
+            <option value="1000">Deposit: $1000</option>
+        </select>
+
+        <label for="paymentMonths">Select financing duration:</label>
+        <select id="paymentMonths" name="paymentMonths">
+            <option value="4">4 Months</option>
+            <option value="6">6 Months</option>
+            <option value="11">11 Months</option>
+        </select>
+
+        <button type="button" onclick="handleSubmit()">Proceed with Payment</button>
+    </form>
+
+    <script>
+        async function handleSubmit() {
+            const form = document.getElementById('paymentPlanForm');
+            const formData = new FormData(form);
+            const data = {
+                email: formData.get('email'), // Include the email in the data
+                deposit: parseInt(formData.get('deposit')),
+                paymentMonths: parseInt(formData.get('paymentMonths'))
+            };
+
+            try {
+                const response = await fetch('/process-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    console.log('Success:', result);
+                    // Handle success, e.g., redirect to confirmation page or show a message
+                } else {
+                    console.error('Error:', result);
+                    // Handle error
+                }
+            } catch (error) {
+                console.error('Network Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
