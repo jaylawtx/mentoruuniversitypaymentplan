@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "mentoruuniversitypaymentplan"
-  functions = "mentoruuniversitypaymentplan/payment-page/netlify-functions"
+  functions = "/payment-page/netlify-functions"
   command = "npm run build" # Replace with your actual build command if different
 
 [build.environment]
