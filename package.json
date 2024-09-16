@@ -1,0 +1,20 @@
+{
+  "name": "mentoruuniversitypaymentplan",
+  "version": "1.0.0",
+  "description": "A payment plan system for Mentor U! University using Stripe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": ["stripe", "payment", "subscription"],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "dotenv": "^16.0.3",
+    "stripe": "^11.0.0",
+    "netlify-cli": "^17.36.0"
+  }
+}
